@@ -21,7 +21,4 @@ public abstract class BaseEntity {
     private LocalDateTime updatedAt;
 
     private LocalDateTime deletedAt;
-
-    @Column(nullable = false, length = 15)
-    private String status;
 }
