@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import uk.jinhy.umcstudy.apiPayload.ApiResponse;
+import uk.jinhy.umcstudy.converter.restaurant.RestaurantConverter;
 import uk.jinhy.umcstudy.domain.Restaurant;
 import uk.jinhy.umcstudy.dto.restaurant.RestaurantRequestDTO;
+import uk.jinhy.umcstudy.dto.restaurant.RestaurantResponseDTO;
 import uk.jinhy.umcstudy.service.restaurant.RestaurantCommandService;
 
 @RequiredArgsConstructor
@@ -16,10 +18,11 @@ import uk.jinhy.umcstudy.service.restaurant.RestaurantCommandService;
 @RequestMapping("restaurant")
 public class RestaurantController {
     private final RestaurantCommandService restaurantCommandService;
+    private final RestaurantConverter restaurantConverter;
 
     @PostMapping
-    public ApiResponse<Object> register(@RequestBody @Valid RestaurantRequestDTO.AddRestaurantDTO dto) {
+    public ApiResponse<RestaurantResponseDTO.AddRestaurantDTO> register(@RequestBody @Valid RestaurantRequestDTO.AddRestaurantDTO dto) {
         Restaurant restaurant = restaurantCommandService.addRestaurant(dto);
-        return ApiResponse.onSuccess(null);
+        return ApiResponse.onSuccess(restaurantConverter.toDto(restaurant));
     }
 }

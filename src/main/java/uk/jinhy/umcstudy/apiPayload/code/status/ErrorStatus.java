@@ -3,6 +3,7 @@ package uk.jinhy.umcstudy.apiPayload.code.status;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.client.reactive.ClientHttpRequestDecorator;
 import uk.jinhy.umcstudy.apiPayload.code.BaseErrorCode;
 import uk.jinhy.umcstudy.apiPayload.code.ErrorReasonDTO;
 
@@ -26,9 +27,11 @@ public enum ErrorStatus implements BaseErrorCode {
     TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, "TEMP4001", "이거는 테스트"),
 
     // FoodType
-    BAD_FOODTYPE_EXCEPTION(HttpStatus.BAD_REQUEST, "FOOD4001", "잘못된 FoodType입니다.")
-    ;
+    BAD_FOODTYPE_EXCEPTION(HttpStatus.BAD_REQUEST, "FOOD4001", "잘못된 FoodType입니다."),
 
+    // Restaurant
+    BAD_RESTAURANT_EXCEPTION(HttpStatus.BAD_REQUEST, "RESTAURANT4001", "잘못된 Restaurant입니다.")
+    ;
     private final HttpStatus httpStatus;
     private final String code;
     private final String message;

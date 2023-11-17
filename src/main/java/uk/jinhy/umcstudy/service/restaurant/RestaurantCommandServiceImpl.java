@@ -35,6 +35,6 @@ public class RestaurantCommandServiceImpl implements RestaurantCommandService {
                 .status("생성됨")
                 .build();
         restaurantRepository.save(restaurant);
-        return null;
+        return restaurant;
     }
 }
