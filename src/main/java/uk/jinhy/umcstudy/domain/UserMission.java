@@ -34,4 +34,8 @@ public class UserMission {
     private List<NewMissionNotification> newMissionNotificationList = new ArrayList<>();
 
     private String status;
+
+    public void proceed() {
+        status = "PROCEED";
+    }
 }

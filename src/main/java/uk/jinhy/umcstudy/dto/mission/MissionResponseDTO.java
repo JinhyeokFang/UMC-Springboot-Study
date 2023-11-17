@@ -11,4 +11,12 @@ public class MissionResponseDTO {
         int point;
         Long restaurantId;
     }
+
+    @Getter
+    @Builder
+    public static class ProceedMissionDTO {
+        String goal;
+        int point;
+        Long restaurantId;
+    }
 }

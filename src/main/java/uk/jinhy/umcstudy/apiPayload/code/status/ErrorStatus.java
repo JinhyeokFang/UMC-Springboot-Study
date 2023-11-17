@@ -30,7 +30,11 @@ public enum ErrorStatus implements BaseErrorCode {
     BAD_FOODTYPE_EXCEPTION(HttpStatus.BAD_REQUEST, "FOOD4001", "잘못된 FoodType입니다."),
 
     // Restaurant
-    BAD_RESTAURANT_EXCEPTION(HttpStatus.BAD_REQUEST, "RESTAURANT4001", "잘못된 Restaurant입니다.")
+    BAD_RESTAURANT_EXCEPTION(HttpStatus.BAD_REQUEST, "RESTAURANT4001", "잘못된 Restaurant입니다."),
+
+    // Mission
+    BAD_MISSION_EXCEPTION(HttpStatus.BAD_REQUEST, "RESTAURANT4001", "잘못된 Mission입니다."),
+    BAD_MISSION_STATUS_EXCEPTION(HttpStatus.BAD_REQUEST, "RESTAURANT4002", "잘못된 Mission Status입니다.")
     ;
     private final HttpStatus httpStatus;
     private final String code;
