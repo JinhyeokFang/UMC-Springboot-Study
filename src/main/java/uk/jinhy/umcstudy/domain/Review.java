@@ -12,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class Review extends BaseEntity {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
 
