@@ -29,4 +29,12 @@ public class MissionCommandServiceImpl implements MissionCommandService {
         missionRepository.save(mission);
         return mission;
     }
+
+    @Override
+    public UserMission proceedMission(Long id) {
+        UserMission mission = missionRepository.findById(id).get();
+        mission.proceed();
+        missionRepository.save(mission);
+        return mission;
+    }
 }

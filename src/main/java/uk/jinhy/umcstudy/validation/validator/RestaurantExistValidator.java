@@ -11,7 +11,6 @@ import uk.jinhy.umcstudy.validation.annotation.ExistRestaurant;
 @Component
 @RequiredArgsConstructor
 public class RestaurantExistValidator implements ConstraintValidator<ExistRestaurant, Long> {
-
     private final RestaurantQueryService restaurantQueryService;
 
     @Override

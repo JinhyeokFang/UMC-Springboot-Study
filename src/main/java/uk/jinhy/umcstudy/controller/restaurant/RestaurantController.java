@@ -2,6 +2,7 @@ package uk.jinhy.umcstudy.controller.restaurant;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import uk.jinhy.umcstudy.service.restaurant.RestaurantCommandService;
 
 @RequiredArgsConstructor
 @RestController
+@Validated
 @RequestMapping("restaurant")
 public class RestaurantController {
     private final RestaurantCommandService restaurantCommandService;
