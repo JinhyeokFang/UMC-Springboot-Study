@@ -22,6 +22,7 @@ public class Mission extends BaseEntity {
     @Column(nullable = false)
     private int point;
 
-    @OneToMany(mappedBy = "mission", fetch = FetchType.LAZY)
-    private List<UserMission> userMissionList = new ArrayList<>();
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "restaurant_id")
+    private Restaurant restaurant;
 }

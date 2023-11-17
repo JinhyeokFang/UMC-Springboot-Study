@@ -12,17 +12,26 @@ import java.util.List;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class UserMission {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "mission_id")
-    private Mission mission;
+    @Column(length = 200, nullable = false)
+    private String goal;
+
+    @Column(nullable = false)
+    private int point;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "restaurant_id")
+    private Restaurant restaurant;
+
     @OneToMany(fetch = FetchType.LAZY)
     private List<NewMissionNotification> newMissionNotificationList = new ArrayList<>();
+
+    private String status;
 }
