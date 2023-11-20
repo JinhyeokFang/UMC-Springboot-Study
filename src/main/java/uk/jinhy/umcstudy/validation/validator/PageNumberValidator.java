@@ -17,7 +17,7 @@ public class PageNumberValidator implements ConstraintValidator<PageNumber, Long
 
     @Override
     public boolean isValid(Long value, ConstraintValidatorContext context) {
-        boolean isValid = 0 <= value;
+        boolean isValid = 0 < value;
         if (!isValid) {
             context.disableDefaultConstraintViolation();
             context.buildConstraintViolationWithTemplate(ErrorStatus.BAD_PAGE_NUMBER_EXCEPTION.toString()).addConstraintViolation();

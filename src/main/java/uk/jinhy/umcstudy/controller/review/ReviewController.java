@@ -49,8 +49,8 @@ public class ReviewController {
     @Parameters({
             @Parameter(name = "page", description = "불러올 리뷰의 페이지 번호")
     })
-    public ApiResponse<ReviewResponseDTO.GetMyReviewDTO> getMyReview(@PageNumber Long page) {
-        Page<Review> reviewPage = reviewQueryService.getMyReviews(null, page, 10L);
+    public ApiResponse<ReviewResponseDTO.GetMyReviewDTO> getMyReview(@PageNumber @RequestParam(value = "page") Long page) {
+        Page<Review> reviewPage = reviewQueryService.getMyReviews(null, page - 1, 10L);
         return ApiResponse.onSuccess(reviewConverter.toGetMyReviewDto(reviewPage));
     }
 }
