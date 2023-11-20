@@ -6,4 +6,5 @@ import uk.jinhy.umcstudy.dto.mission.MissionRequestDTO;
 public interface MissionCommandService {
     UserMission addMission(MissionRequestDTO.AddMissionDTO dto);
     UserMission proceedMission(Long id);
+    UserMission completeMission(Long id);
 }

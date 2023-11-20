@@ -37,4 +37,12 @@ public class MissionCommandServiceImpl implements MissionCommandService {
         missionRepository.save(mission);
         return mission;
     }
+
+    @Override
+    public UserMission completeMission(Long id) {
+        UserMission mission = missionRepository.findById(id).get();
+        mission.complete();
+        missionRepository.save(mission);
+        return mission;
+    }
 }

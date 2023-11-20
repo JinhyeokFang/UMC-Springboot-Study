@@ -36,4 +36,19 @@ public class MissionResponseDTO {
         List<MissionDTO> missions;
         Long numberOfPages;
     }
+
+    @Getter
+    @Builder
+    public static class GetMyInProgressMissionsDTO {
+        List<MissionDTO> missions;
+        Long numberOfPages;
+    }
+
+    @Getter
+    @Builder
+    public static class CompleteMissionDTO {
+        String goal;
+        int point;
+        Long restaurantId;
+    }
 }

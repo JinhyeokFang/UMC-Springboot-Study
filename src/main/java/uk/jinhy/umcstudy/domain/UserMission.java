@@ -38,4 +38,8 @@ public class UserMission {
     public void proceed() {
         status = "PROCEED";
     }
+
+    public void complete() {
+        status = "COMPLETE";
+    }
 }
