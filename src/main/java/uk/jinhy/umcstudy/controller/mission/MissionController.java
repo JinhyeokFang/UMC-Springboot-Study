@@ -11,6 +11,7 @@ import uk.jinhy.umcstudy.dto.mission.MissionRequestDTO;
 import uk.jinhy.umcstudy.dto.mission.MissionResponseDTO;
 import uk.jinhy.umcstudy.service.mission.MissionCommandService;
 import uk.jinhy.umcstudy.validation.annotation.MissionStatusCreated;
+import uk.jinhy.umcstudy.validation.annotation.PageNumber;
 
 @RequiredArgsConstructor
 @RestController
@@ -30,5 +31,10 @@ public class MissionController {
     public ApiResponse<MissionResponseDTO.ProceedMissionDTO> proceed(@MissionStatusCreated @PathVariable("id") Long id) {
         UserMission mission = missionCommandService.proceedMission(id);
         return ApiResponse.onSuccess(missionConverter.toProceedMissionDto(mission));
+    }
+
+    @GetMapping
+    public Long a(@PageNumber Long a) {
+        return a;
     }
 }
